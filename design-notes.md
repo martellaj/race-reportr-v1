@@ -1,9 +1,14 @@
 # race reportr
 
+## Features
+* **Ability to geneate well-formatted, informational race reports.**
+  * Series of forms to get info, and then provide the Markdown to submit.
+* **Rendered preview of output.**
+  * After filling out all desired sections, render the generated Markdown so the user can see it.
+
 ## Miscellaneous sections
 
-### Basic race facts
-* Will go into a "About the race" section
+### "About the race" section
 * A form to record basic race facts
   * Name of race
   * Race distance
@@ -12,13 +17,11 @@
   * Goals (A, B, C), description and if completed
   * Link to Strava, SmashRun activity
   
-### Splits
-* Will go into a "Splits" section
+### "Splits" section
 * A form to record mile splits
   * A row with an input and a button to add a new row
   
-### Pictures
-* Will go into a "Pictures" section
+### "Pictures" section
 * A form for race pictures
   * A row with an input for an Imgur link and a description
   
