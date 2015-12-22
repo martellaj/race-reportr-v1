@@ -30,5 +30,10 @@
   * A row with a dropdown of preselected section titles, a textbox, and a button to add a new row
 * Sections
   * Training
+  * Race strategy
+  * Pre-race
+  * Mile X (and KM X)
+  * Miles X to Y (and KM X to Y)
+  * Post-race
   * What's next?
   * Custom
