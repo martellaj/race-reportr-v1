@@ -7,6 +7,7 @@
   * After filling out all desired sections, render the generated Markdown so the user can see it.
 
 ## Miscellaneous sections
+* All sections have an "Include?" checkbox 
 
 ### "About the race" section
 * A form to record basic race facts
@@ -25,6 +26,12 @@
 * A form for race pictures
   * A row with an input for an Imgur link and a description
   
+### "Results" section
+* A form for finishing place in different categories
+  * Overall finish
+  * Gender finish
+  * Age group finish
+  
 ## Report sections
 * A form to record more text-heavy sections of the report
   * A row with a dropdown of preselected section titles, a textbox, and a button to add a new row
@@ -37,3 +44,6 @@
   * Post-race
   * What's next?
   * Custom
+  
+## Libaries
+* [markdown-js](https://github.com/evilstreak/markdown-js) - For converting Markdown to HTML
