@@ -39,6 +39,7 @@
   * Training
   * Race strategy
   * Pre-race
+  * Race
   * Mile X (and KM X)
   * Miles X to Y (and KM X to Y)
   * Post-race
