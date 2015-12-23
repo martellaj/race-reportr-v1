@@ -11,16 +11,16 @@
 
 ### "About the race" section
 * A form to record basic race facts
-  * Name of race
-  * Race distance
-  * Race date
-  * Race website
-  * Goals (A, B, C), description and if completed
+  * ~~Name of race~~
+  * ~~Race distance~~
+  * ~~Race date~~
+  * ~~Race website~~
+  * ~~Goals (A, B, C), description and if completed~~
   * Link to Strava, SmashRun activity
   
 ### "Splits" section
-* A form to record mile splits
-  * A row with an input and a button to add a new row
+* ~~A form to record mile splits~~
+  * ~~A row with an input and a button to add a new row~~
   
 ### "Pictures" section
 * A form for race pictures
