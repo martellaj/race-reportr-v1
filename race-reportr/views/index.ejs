@@ -36,13 +36,13 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Project name</a>
+        <a class="navbar-brand" href="#">race reportr</a>
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li class="active"><a href="#">generator</a></li>
+          <li><a href="/preview">preview</a></li>
+          <li><a href="/about">output</a></li>
         </ul>
       </div>
       <!--/.nav-collapse -->
@@ -53,87 +53,84 @@
 
     <div class="starter-template">
       <div class="row">
-        <!-- Form side. 
-          ==================================== -->
         <div class="col-sm-6">
-          <form>
-            <!-- General race information. 
+          <!-- General race information. 
               ==================================== -->
-            <h2 class="lead"><em>Race information</em></h2>
+          <h2 class="lead"><em>race information</em></h2>
 
-            <div class="form-group">
-              <label for="race-name">Race name</label>
-              <input id="race-name" type="text">
-            </div>
-            <div class="form-group">
-              <label for="race-distance">Race distance</label>
-              <input id="race-distance" type="text">
-            </div>
-            <div class="form-group">
-              <label for="race-date">Race date</label>
-              <input id="race-date" type="text">
-            </div>
-            <div class="form-group">
-              <label for="race-website">Race website</label>
-              <input id="race-website" type="text">
-            </div>
+          <div class="form-group">
+            <label for="race-name">race name</label>
+            <input id="race-name" type="text">
+          </div>
+          <div class="form-group">
+            <label for="race-distance">race distance</label>
+            <input id="race-distance" type="text">
+          </div>
+          <div class="form-group">
+            <label for="race-date">race date</label>
+            <input id="race-date" type="text">
+          </div>
+          <div class="form-group">
+            <label for="race-website">race website</label>
+            <input id="race-website" type="text">
+          </div>
 
-            <hr />
+          <hr />
 
-            <!-- Goal information. 
+          <!-- Splits information. 
               ==================================== -->
-            <h2 class="lead"><em>Goals</em></h2>
+          <h2 class="lead"><em>splits</em></h2>
 
-            <div class="form-group">
-              <label for="goal-a">A goal</label>
-              <input id="goal-a" type="text" style="display: inline">
-              <input id="goal-a-completed" type="checkbox" style="display: inline">
+          <div class="form-group">
+            <label for="distance-choice">distance type</label>
+            <div id="distance-type" class="radio">
+              <label>
+                <input type="radio" name="split-distance" id="distance-choice-miles" value="miles" checked>miles
+              </label>
             </div>
-            <div class="form-group">
-              <label for="goal-b">B goal</label>
-              <input id="goal-b" type="text" style="display: inline">
-              <input id="goal-b-completed" type="checkbox" style="display: inline">
+            <div class="radio">
+              <label>
+                <input type="radio" name="split-distance" id="distance-choice-kilometers" value="kilometers">kilometers
+              </label>
             </div>
-            <div class="form-group">
-              <label for="goal-c">C goal</label>
-              <input id="goal-c" type="text" style="display: inline">
-              <input id="goal-c-completed" type="checkbox" style="display: inline">
+          </div>
+
+          <div class="splits">
+            <div class="form-group split-div-1">
+              <label for="split-1" style="display: inline">1 </label>
+              <input id="split-1" type="text" style="display: inline">
+              <input class="square-btn split-add-btn" type="button" value="+">
             </div>
+          </div>
 
-            <hr />
+          <hr />
 
-            <!-- Splits information. 
-              ==================================== -->
-            <h2 class="lead"><em>Splits</em></h2>
-
-            <div class="form-group">
-              <label for="distance-choice">Distance type</label>
-              <div id="distance-type" class="radio">
-                <label>
-                  <input type="radio" name="split-distance" id="distance-choice-miles" value="miles" checked>Miles
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="split-distance" id="distance-choice-kilometers" value="kilometers">Kilometers
-                </label>
-              </div>
-            </div>
-
-            <div class="splits">
-              <div class="form-group split-div-1">
-                <label for="split-1" style="display: inline">1 </label>
-                <input id="split-1" type="text" style="display: inline">
-                <input class="square-btn split-add-btn" type="button" value="+">
-              </div>
-            </div>
-
-          </form>
         </div>
 
         <!-- Output side. 
           ==================================== -->
         <div class="col-sm-6">
+          <!-- Goal information. 
+              ==================================== -->
+          <h2 class="lead"><em>goals</em></h2>
+
+          <div class="form-group">
+            <label for="goal-a">A goal</label>
+            <input id="goal-a" type="text" style="display: inline">
+            <input id="goal-a-completed" type="checkbox" style="display: inline">
+          </div>
+          <div class="form-group">
+            <label for="goal-b">B goal</label>
+            <input id="goal-b" type="text" style="display: inline">
+            <input id="goal-b-completed" type="checkbox" style="display: inline">
+          </div>
+          <div class="form-group">
+            <label for="goal-c">C goal</label>
+            <input id="goal-c" type="text" style="display: inline">
+            <input id="goal-c-completed" type="checkbox" style="display: inline">
+          </div>
+
+          <hr />
 
         </div>
       </div>
@@ -147,7 +144,7 @@
   ================================================== -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  
+
   <!-- App code. 
   ==================================== -->
   <script src="/javascripts/main.js"></script>
