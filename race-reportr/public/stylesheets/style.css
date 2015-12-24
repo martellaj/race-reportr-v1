@@ -25,3 +25,7 @@ input, label {
 input[type=text].longer {
   width: 75%;
 }
+
+select {
+  margin-bottom: 5px;
+}
