@@ -11,10 +11,17 @@
 
   <title>race reportr</title>
 
-  <!-- Bootstrap core CSS -->
+  <!-- Bootstrap core CSS 
+  ==================================== -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Awesome Bootstrap Checkbox
+  ==================================== -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link href="/stylesheets/awesome-bootstrap-checkbox.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
+  <!-- App styles 
+  ==================================== -->
   <link href="/stylesheets/style.css" rel="stylesheet">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -55,7 +62,7 @@
       <div class="row">
         <div class="col-sm-6">
           <!-- General race information. 
-              ==================================== -->
+          ==================================== -->
           <h2 class="lead"><em>race information</em></h2>
 
           <div class="form-group">
@@ -78,20 +85,18 @@
           <hr />
 
           <!-- Splits information. 
-              ==================================== -->
+          ==================================== -->
           <h2 class="lead"><em>splits</em></h2>
 
           <div class="form-group">
             <label for="distance-choice">distance type</label>
-            <div id="distance-type" class="radio">
-              <label>
-                <input type="radio" name="split-distance" id="distance-choice-miles" value="miles" checked>miles
-              </label>
+            <div id="distance-type" class="radio radio-primary">
+              <input type="radio" name="split-distance" id="distance-choice-miles" value="miles" checked>
+              <label for="distance-choice-miles">miles</label>
             </div>
-            <div class="radio">
-              <label>
-                <input type="radio" name="split-distance" id="distance-choice-kilometers" value="kilometers">kilometers
-              </label>
+            <div class="radio radio-primary">
+              <input type="radio" name="split-distance" id="distance-choice-kilometers" value="kilometers">      
+              <label for="distance-choice-kilometers">kilometers</label>                      
             </div>
           </div>
 
@@ -107,27 +112,34 @@
 
         </div>
 
-        <!-- Output side. 
-          ==================================== -->
         <div class="col-sm-6">
           <!-- Goal information. 
-              ==================================== -->
+          ==================================== -->
           <h2 class="lead"><em>goals</em></h2>
 
           <div class="form-group">
             <label for="goal-a">A goal</label>
             <input id="goal-a" type="text" style="display: inline">
-            <input id="goal-a-completed" type="checkbox" style="display: inline">
+            <div class="checkbox checkbox-inline checkbox-success">
+              <input type="checkbox" id="goal-a-completed">
+              <label for="goal-a-completed">Completed?</label>
+            </div>
           </div>
           <div class="form-group">
             <label for="goal-b">B goal</label>
             <input id="goal-b" type="text" style="display: inline">
-            <input id="goal-b-completed" type="checkbox" style="display: inline">
+            <div class="checkbox checkbox-inline checkbox-success">
+              <input type="checkbox" id="goal-b-completed">
+              <label for="goal-b-completed">Completed?</label>
+            </div>
           </div>
           <div class="form-group">
             <label for="goal-c">C goal</label>
             <input id="goal-c" type="text" style="display: inline">
-            <input id="goal-c-completed" type="checkbox" style="display: inline">
+            <div class="checkbox checkbox-inline checkbox-success">
+              <input type="checkbox" id="goal-c-completed">
+              <label for="goal-c-completed">Completed?</label>
+            </div>
           </div>
 
           <hr />
@@ -140,12 +152,12 @@
   <!-- /.container -->
 
 
-  <!-- Bootstrap core JavaScript.
+  <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-  <!-- App code. 
+  <!-- App code
   ==================================== -->
   <script src="/javascripts/main.js"></script>
 </body>
