@@ -69,11 +69,11 @@ $(function () {
     var pictureRow = '<div class="picture-div-' + newRowNumber + '">\n';
     pictureRow += '\t<div class="form-group">';
     pictureRow += '\t\t<label for="picture-' + newRowNumber + '-link">picture #' + newRowNumber + ' link</label>\n';
-    pictureRow += '\t\t<input id="picture-' + newRowNumber + '-link" type="text">\n';
+    pictureRow += '\t\t<input class="longer" id="picture-' + newRowNumber + '-link" type="text">\n';
     pictureRow += '\t</div>';
     pictureRow += '\t<div class="form-group">';
     pictureRow += '\t\t<label for="picture-' + newRowNumber + '-description">picture #' + newRowNumber + ' description</label>\n';
-    pictureRow += '\t\t<input id="picture-' + newRowNumber + '-description" type="text">\n';
+    pictureRow += '\t\t<input class="longer" id="picture-' + newRowNumber + '-description" type="text">\n';
     pictureRow += '\t</div>\n';
     pictureRow += '</div>\n';
 

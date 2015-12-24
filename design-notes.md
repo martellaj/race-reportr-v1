@@ -23,8 +23,8 @@
   * ~~A row with an input and a button to add a new row~~
   
 ### "Pictures" section
-* A form for race pictures
-  * A row with an input for an Imgur link and a description
+* ~~A form for race pictures~~
+  * ~~A row with an input for an Imgur link and a description~~
   
 ### "Results" section
 * A form for finishing place in different categories

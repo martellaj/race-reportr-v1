@@ -21,3 +21,7 @@ input, label {
   height: 26px;
   width: 26px;
 }
+
+input[type=text].longer {
+  width: 75%;
+}
