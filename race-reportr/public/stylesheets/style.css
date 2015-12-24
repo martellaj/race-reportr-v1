@@ -11,8 +11,13 @@ input, label {
   display: block;
 }
 
-.square-btn {
+.square-btn-inline {
   height: 26px;
   width: 26px;
   display: inline;
+}
+
+.square-btn {
+  height: 26px;
+  width: 26px;
 }

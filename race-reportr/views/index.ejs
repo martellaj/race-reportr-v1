@@ -14,7 +14,7 @@
   <!-- Bootstrap core CSS 
   ==================================== -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-  
+
   <!-- Awesome Bootstrap Checkbox
   ==================================== -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -95,8 +95,8 @@
               <label for="distance-choice-miles">miles</label>
             </div>
             <div class="radio radio-primary">
-              <input type="radio" name="split-distance" id="distance-choice-kilometers" value="kilometers">      
-              <label for="distance-choice-kilometers">kilometers</label>                      
+              <input type="radio" name="split-distance" id="distance-choice-kilometers" value="kilometers">
+              <label for="distance-choice-kilometers">kilometers</label>
             </div>
           </div>
 
@@ -104,7 +104,7 @@
             <div class="form-group split-div-1">
               <label for="split-1" style="display: inline">1 </label>
               <input id="split-1" type="text" style="display: inline">
-              <input class="square-btn split-add-btn" type="button" value="+">
+              <input class="square-btn-inline split-add-btn" type="button" value="+">
             </div>
           </div>
 
@@ -139,6 +139,32 @@
             <div class="checkbox checkbox-inline checkbox-success">
               <input type="checkbox" id="goal-c-completed">
               <label for="goal-c-completed">Completed?</label>
+            </div>
+          </div>
+
+          <hr />
+
+          <!-- Pictures section. 
+          ==================================== -->
+          <div class="pictures-section">
+            <h2 class="lead"><em>pictures</em></h2>
+
+            <div class="form-group">
+              <input class="square-btn-inline picture-add-btn" type="button" value="+">
+              <input class="square-btn-inline picture-sub-btn" type="button" value="-" disabled>
+            </div>
+
+            <div class="pictures">
+              <div class="picture-div-1">
+                <div class="form-group">
+                  <label for="picture-1-link">picture #1 link</label>
+                  <input id="picture-1-link" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="picture-1-description">picture #1 description</label>
+                  <input id="picture-1-description" type="text">
+                </div>
+              </div>
             </div>
           </div>
 
