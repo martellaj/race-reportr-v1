@@ -125,25 +125,27 @@
           
           <!-- Splits information. 
           ==================================== -->
-          <h2 class="lead"><em>splits</em></h2>
-
-          <div class="form-group">
-            <label for="distance-choice">distance type</label>
-            <div id="distance-type" class="radio radio-primary">
-              <input type="radio" name="split-distance" id="distance-choice-miles" value="miles" checked>
-              <label for="distance-choice-miles">miles</label>
+          <div class="splits-section">
+            <h2 class="lead"><em>splits</em></h2>  
+            
+            <div class="form-group">
+              <label for="distance-choice">distance type</label>
+              <div id="distance-type" class="radio radio-primary">
+                <input type="radio" name="split-distance" id="distance-choice-miles" value="miles" checked>
+                <label for="distance-choice-miles">miles</label>
+              </div>
+              <div class="radio radio-primary">
+                <input type="radio" name="split-distance" id="distance-choice-kilometers" value="kilometers">
+                <label for="distance-choice-kilometers">kilometers</label>
+              </div>
             </div>
-            <div class="radio radio-primary">
-              <input type="radio" name="split-distance" id="distance-choice-kilometers" value="kilometers">
-              <label for="distance-choice-kilometers">kilometers</label>
-            </div>
-          </div>
-
-          <div class="splits">
-            <div class="form-group split-div-1">
-              <label for="split-1" style="display: inline">1 </label>
-              <input id="split-1" type="text" style="display: inline" placeholder="8:46">
+                      
+            <div class="form-group">
               <input class="square-btn-inline split-add-btn" type="button" value="+">
+              <input class="square-btn-inline split-sub-btn" type="button" value="-">
+            </div>
+            
+            <div class="splits"> 
             </div>
           </div>
 
@@ -159,20 +161,10 @@
 
             <div class="form-group">
               <input class="square-btn-inline picture-add-btn" type="button" value="+">
-              <input class="square-btn-inline picture-sub-btn" type="button" value="-" disabled>
+              <input class="square-btn-inline picture-sub-btn" type="button" value="-">
             </div>
 
             <div class="pictures">
-              <div class="picture-div-1">
-                <div class="form-group">
-                  <label for="picture-1-link">picture #1 link</label>
-                  <input class="longer" id="picture-1-link" type="text" placeholder="http://i.imgur.com/1brDP61.jpg">
-                </div>
-                <div class="form-group">
-                  <label for="picture-1-description">picture #1 description</label>
-                  <input class="longer" id="picture-1-description" type="text" placeholder="me at mile 8">
-                </div>
-              </div>
             </div>
           </div>
 
@@ -187,11 +179,10 @@
           <div class="text-heavy-section">
             <div class="form-group">
               <input class="square-btn-inline text-add-btn" type="button" value="+">
-              <input class="square-btn-inline text-sub-btn" type="button" value="-" disabled>
+              <input class="square-btn-inline text-sub-btn" type="button" value="-">
             </div>
             
             <div class="text-heavy-sections">
-              
             </div>
           </div>
           
