@@ -1,6 +1,15 @@
 /* global $ */
 
 $(function () {
+  var elevator = new Elevator({
+    mainAudio: '/music/elevator.mp3',
+    endAudio: '/music/ding.mp3'
+  });
+  
+  $('#elevator-button').on('click', function () {
+    elevator.elevate();
+  });
+  
   /**
    * @desc Event handler for clicking the add button in the splits section.
    *       This function adds a new input row to the splits section.
