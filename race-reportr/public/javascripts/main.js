@@ -1,15 +1,18 @@
-/* global $ */
+/* global $, Elevator */
 
 $(function () {
+  /**
+   * @desc Creating an elevator and adding its elevate function to the button.
+   */
   var elevator = new Elevator({
     mainAudio: '/music/elevator.mp3',
     endAudio: '/music/ding.mp3'
   });
-  
+
   $('#elevator-button').on('click', function () {
     elevator.elevate();
   });
-  
+
   /**
    * @desc Event handler for clicking the add button in the splits section.
    *       This function adds a new input row to the splits section.
@@ -20,10 +23,10 @@ $(function () {
 
     // Get the new row number.
     var newRowNumber = $('.splits').children().length + 1;
-    
-    // Build the new row HTML.    
+
+    // Build the new row HTML.
     var splitRow = '';
-    
+
     // Include placeholder value if first row.
     if (newRowNumber === 1) {
       splitRow = '<div class="form-group split-div-1">';
@@ -68,7 +71,7 @@ $(function () {
 
     // Build the new row HTML.
     var pictureRow = '';
-    
+
     if (newRowNumber === 1) {
       pictureRow = '<div class="picture-div-1">\n';
       pictureRow += '\t<div class="form-group">';
@@ -109,7 +112,7 @@ $(function () {
     var lastRow = $('.pictures').children().length;
     $('.picture-div-' + lastRow).remove();
   });
-  
+
   /**
    * @desc Event handler for clicking the add button in the text-heavy section.
    *       This function adds a new input row to the text-heavy section.
@@ -123,25 +126,25 @@ $(function () {
 
     // Build the new row HTML.
     var textHeavyRow = '<div class="text-div-' + newRowNumber + '">\n';
-    textHeavyRow += '\t<select class="form-control" id="text-select-' + newRowNumber +'">';
+    textHeavyRow += '\t<select class="form-control" id="text-select-' + newRowNumber + '">';
     textHeavyRow += '\t\t<option>Training</option>';
     textHeavyRow += '\t\t<option>Race strategy</option>';
-    textHeavyRow += '\t\t<option>Pre-race</option>'; 
+    textHeavyRow += '\t\t<option>Pre-race</option>';
     textHeavyRow += '\t\t<option>Race</option>';
     textHeavyRow += '\t\t<option>Mile [#]</option>';
     textHeavyRow += '\t\t<option>Miles [#] to [#]</option>';
     textHeavyRow += '\t\t<option>Kilometer [#]</option>';
     textHeavyRow += '\t\t<option>Kilomters [#] to [#]</option>';
-    textHeavyRow += '\t\t<option>Post-race</option>'; 
-    textHeavyRow += '\t\t<option>What\'s next?</option>'; 
-    textHeavyRow += '\t\t<option>Custom</option>';                      
+    textHeavyRow += '\t\t<option>Post-race</option>';
+    textHeavyRow += "\t\t<option>What's next?</option>";
+    textHeavyRow += '\t\t<option>Custom</option>';
     textHeavyRow += '\t</select>';
     textHeavyRow += '</div>';
 
     // Add the row to the text-heavy section.
     $('.text-heavy-sections').append(textHeavyRow);
   });
-  
+
   /**
    * @desc Event handler for clicking the subtract button in the text-heavy section.
    *       This function removes the last row in the text-heavy section,
