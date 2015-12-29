@@ -189,6 +189,18 @@ $(function () {
       isCompleted: $('#goal-c-completed').is(':checked')
     };
     
+    // Get splits information from form.
+    formData.splitDistance = $('input[name=split-distance]:checked').val();
+    formData.splits = [];
+    
+    // Get number of splits entered.
+    var splits = $('.splits').children();
+    
+    // Get value of each split.
+    for (var i = 1; i < splits.length + 1; i++) {
+      formData.splits.push($('#split-' + i).val());
+    }
+    
     // Add race information to querystring.
     uri += '?raceName=' + formData.raceName;
     uri += '&raceDistance=' + formData.raceDistance;
@@ -209,6 +221,15 @@ $(function () {
     if (formData.goalC.description !== '') {
       uri += '&goalCDescription=' + formData.goalC.description;
       uri += '&goalCIsCompleted=' + formData.goalC.isCompleted; 
+    }
+    
+    // Add splits information to querystring.
+    if (formData.splits.length > 0) {
+      uri += '&splitDistance=' + formData.splitDistance;
+      
+      for (var i = 0; i < formData.splits.length; i++) {
+        uri += '&split' + (i + 1) + '=' + formData.splits[i];
+      }
     }
     
     window.open(uri, '_blank');
