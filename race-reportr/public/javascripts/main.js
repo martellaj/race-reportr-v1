@@ -157,4 +157,60 @@ $(function () {
     var lastRow = $('.text-heavy-sections').children().length;
     $('.text-div-' + lastRow).remove();
   });
+  
+  $('#preview-button').on('click', function () {
+    saveFormData('/preview');
+  });
+  
+  function saveFormData (uri) {
+    console.log('Saving form data...');
+    
+    var formData = {};
+    
+    // Get race information from form.
+    formData.raceName = $('#race-name').val();
+    formData.raceDistance = $('#race-distance').val();
+    formData.raceDate = $('#race-date').val();
+    formData.raceWebsite = $('#race-website').val();    
+    
+    // Get goals information from form.
+    formData.goalA = {
+      description: $('#goal-a').val(),
+      isCompleted: $('#goal-a-completed').is(':checked')
+    };
+    
+    formData.goalB = {
+      description: $('#goal-b').val(),
+      isCompleted: $('#goal-b-completed').is(':checked')
+    };
+    
+    formData.goalC = {
+      description: $('#goal-c').val(),
+      isCompleted: $('#goal-c-completed').is(':checked')
+    };
+    
+    // Add race information to querystring.
+    uri += '?raceName=' + formData.raceName;
+    uri += '&raceDistance=' + formData.raceDistance;
+    uri += '&raceDate=' + formData.raceDate;
+    uri += '&raceWebsite=' + formData.raceWebsite;
+    
+    // Add goal information to querystring.
+    if (formData.goalA.description !== '') {
+      uri += '&goalADescription=' + formData.goalA.description;
+      uri += '&goalAIsCompleted=' + formData.goalA.isCompleted; 
+    }
+    
+    if (formData.goalB.description !== '') {
+      uri += '&goalBDescription=' + formData.goalB.description;
+      uri += '&goalBIsCompleted=' + formData.goalB.isCompleted; 
+    }
+    
+    if (formData.goalC.description !== '') {
+      uri += '&goalCDescription=' + formData.goalC.description;
+      uri += '&goalCIsCompleted=' + formData.goalC.isCompleted; 
+    }
+    
+    window.open(uri, '_blank');
+  }
 });

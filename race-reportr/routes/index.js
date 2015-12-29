@@ -7,6 +7,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/preview', function (req, res, next) {
+  console.log(req.query);
   res.render('preview');
 });
 
