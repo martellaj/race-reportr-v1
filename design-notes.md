@@ -42,6 +42,3 @@
   * ~~Post-race~~
   * ~~What's next?~~
   * ~~Custom~~
-  
-## Libaries
-* [markdown-js](https://github.com/evilstreak/markdown-js) - For converting Markdown to HTML
