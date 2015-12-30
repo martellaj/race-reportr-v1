@@ -134,7 +134,7 @@ $(function () {
     textHeavyRow += '\t\t<option>Mile [#]</option>';
     textHeavyRow += '\t\t<option>Miles [#] to [#]</option>';
     textHeavyRow += '\t\t<option>Kilometer [#]</option>';
-    textHeavyRow += '\t\t<option>Kilomters [#] to [#]</option>';
+    textHeavyRow += '\t\t<option>Kilometers [#] to [#]</option>';
     textHeavyRow += '\t\t<option>Post-race</option>';
     textHeavyRow += "\t\t<option>What's next?</option>";
     textHeavyRow += '\t\t<option>Custom</option>';
@@ -221,42 +221,60 @@ $(function () {
       });
     }
     
+    // Get text-heavy section information from form.
+    formData.textHeavySections = [];
+    
+    // Get number of text-heavy sections entered.
+    var textHeavySections = $('.text-heavy-sections').children();
+    
+    // Get value of each text-heavy section.
+    for (var i = 1; i < textHeavySections.length + 1; i++) {
+      formData.textHeavySections.push($('#text-select-' + i + ' option:selected').text());
+    }
+    
     // Add race information to query string.
-    uri += '?raceName=' + formData.raceName;
-    uri += '&raceDistance=' + formData.raceDistance;
-    uri += '&raceDate=' + formData.raceDate;
-    uri += '&raceWebsite=' + formData.raceWebsite;
+    uri += '?raceName=' + encodeURIComponent(formData.raceName);
+    uri += '&raceDistance=' + encodeURIComponent(formData.raceDistance);
+    uri += '&raceDate=' + encodeURIComponent(formData.raceDate);
+    uri += '&raceWebsite=' + encodeURIComponent(formData.raceWebsite);
     
     // Add goal information to query string.
     if (formData.goalA.description !== '') {
-      uri += '&goalADescription=' + formData.goalA.description;
-      uri += '&goalAIsCompleted=' + formData.goalA.isCompleted; 
+      uri += '&goalADescription=' + encodeURIComponent(formData.goalA.description);
+      uri += '&goalAIsCompleted=' + encodeURIComponent(formData.goalA.isCompleted); 
     }
     
     if (formData.goalB.description !== '') {
-      uri += '&goalBDescription=' + formData.goalB.description;
-      uri += '&goalBIsCompleted=' + formData.goalB.isCompleted; 
+      uri += '&goalBDescription=' + encodeURIComponent(formData.goalB.description);
+      uri += '&goalBIsCompleted=' + encodeURIComponent(formData.goalB.isCompleted); 
     }
     
     if (formData.goalC.description !== '') {
-      uri += '&goalCDescription=' + formData.goalC.description;
-      uri += '&goalCIsCompleted=' + formData.goalC.isCompleted; 
+      uri += '&goalCDescription=' + encodeURIComponent(formData.goalC.description);
+      uri += '&goalCIsCompleted=' + encodeURIComponent(formData.goalC.isCompleted); 
     }
     
     // Add splits information to query string.
     if (formData.splits.length > 0) {
-      uri += '&splitDistance=' + formData.splitDistance;
+      uri += '&splitDistance=' + encodeURIComponent(formData.splitDistance);
       
       for (var i = 0; i < formData.splits.length; i++) {
-        uri += '&split' + (i + 1) + '=' + formData.splits[i];
+        uri += '&split' + (i + 1) + '=' + encodeURIComponent(formData.splits[i]);
       }
     }
     
     // Add pictures information to query string.
     if (formData.pictures.length > 0) {
       for (var i = 0; i < formData.pictures.length; i++) {
-        uri += '&picture' + (i + 1) + 'Link=' + formData.pictures[i].link;
-        uri += '&picture' + (i + 1) + 'Description=' + formData.pictures[i].description;        
+        uri += '&picture' + (i + 1) + 'Link=' + encodeURIComponent(formData.pictures[i].link);
+        uri += '&picture' + (i + 1) + 'Description=' + encodeURIComponent(formData.pictures[i].description);        
+      }
+    }
+    
+    // Add text-heavy section information to query string.
+    if (formData.textHeavySections.length > 0) {
+      for (var i = 0; i < formData.textHeavySections.length; i++) {
+        uri += '&textHeavySection' + (i + 1) + '=' + encodeURIComponent(formData.textHeavySections[i]);  
       }
     }
     
