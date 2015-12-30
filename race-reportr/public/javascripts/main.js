@@ -162,16 +162,22 @@ $(function () {
     saveFormData('/preview');
   });
   
+  /**
+   * @name saveFormData
+   * @desc Takes the data from... not sure what this will actually do. Probably
+   *       going to break it up.
+   * @param uri The URI to append the querystring to.
+   */
   function saveFormData (uri) {
     console.log('Saving form data...');
     
     var formData = {};
     
     // Get race information from form.
-    formData.raceName = $('#race-name').val();
-    formData.raceDistance = $('#race-distance').val();
-    formData.raceDate = $('#race-date').val();
-    formData.raceWebsite = $('#race-website').val();    
+    formData.raceName = $('#race-name').val() || '[race name goes here]';
+    formData.raceDistance = $('#race-distance').val() || '[race distance goes here]';
+    formData.raceDate = $('#race-date').val() || '[race date goes here]';
+    formData.raceWebsite = $('#race-website').val() || '[race website goes here]';    
     
     // Get goals information from form.
     formData.goalA = {
