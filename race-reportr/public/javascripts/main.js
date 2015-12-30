@@ -166,7 +166,7 @@ $(function () {
    * @name saveFormData
    * @desc Takes the data from... not sure what this will actually do. Probably
    *       going to break it up.
-   * @param uri The URI to append the querystring to.
+   * @param uri The URI to append the query string to.
    */
   function saveFormData (uri) {
     console.log('Saving form data...');
@@ -207,13 +207,27 @@ $(function () {
       formData.splits.push($('#split-' + i).val());
     }
     
-    // Add race information to querystring.
+    // Get pictures information from form.
+    formData.pictures = [];
+    
+    // Get number of pictures entered.
+    var pictures = $('.pictures').children();
+    
+    // Get value of each picture group.
+    for (var i = 1; i < pictures.length + 1; i++) {
+      formData.pictures.push({
+        link: $('#picture-' + i + '-link').val(),
+        description: $('#picture-' + i + '-description').val()
+      });
+    }
+    
+    // Add race information to query string.
     uri += '?raceName=' + formData.raceName;
     uri += '&raceDistance=' + formData.raceDistance;
     uri += '&raceDate=' + formData.raceDate;
     uri += '&raceWebsite=' + formData.raceWebsite;
     
-    // Add goal information to querystring.
+    // Add goal information to query string.
     if (formData.goalA.description !== '') {
       uri += '&goalADescription=' + formData.goalA.description;
       uri += '&goalAIsCompleted=' + formData.goalA.isCompleted; 
@@ -229,12 +243,20 @@ $(function () {
       uri += '&goalCIsCompleted=' + formData.goalC.isCompleted; 
     }
     
-    // Add splits information to querystring.
+    // Add splits information to query string.
     if (formData.splits.length > 0) {
       uri += '&splitDistance=' + formData.splitDistance;
       
       for (var i = 0; i < formData.splits.length; i++) {
         uri += '&split' + (i + 1) + '=' + formData.splits[i];
+      }
+    }
+    
+    // Add pictures information to query string.
+    if (formData.pictures.length > 0) {
+      for (var i = 0; i < formData.pictures.length; i++) {
+        uri += '&picture' + (i + 1) + 'Link=' + formData.pictures[i].link;
+        uri += '&picture' + (i + 1) + 'Description=' + formData.pictures[i].description;        
       }
     }
     
