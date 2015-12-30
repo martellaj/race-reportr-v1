@@ -157,62 +157,65 @@ $(function () {
     var lastRow = $('.text-heavy-sections').children().length;
     $('.text-div-' + lastRow).remove();
   });
-  
-  $('#preview-button').on('click', function () {
-    saveFormData('/preview');
-  });
-  
+
   /**
-   * @name saveFormData
-   * @desc Takes the data from... not sure what this will actually do. Probably
-   *       going to break it up.
+   * @desc Event handler for preview button. Sends form data to the /preview endpoint
+   *       on the backend.
+   */
+  $('#preview-button').on('click', function () {
+    sendFormData('/preview');
+  });
+
+  /**
+   * @name sendFormData
+   * @desc Gets form data, appends it to the query string of the URI, and opens in a new tab.
    * @param uri The URI to append the query string to.
    */
-  function saveFormData (uri) {
+  function sendFormData (uri) {
     console.log('Saving form data...');
-    
+
     var formData = {};
-    
+
     // Get race information from form.
     formData.raceName = $('#race-name').val() || '[race name goes here]';
     formData.raceDistance = $('#race-distance').val() || '[race distance goes here]';
     formData.raceDate = $('#race-date').val() || '[race date goes here]';
-    formData.raceWebsite = $('#race-website').val() || '[race website goes here]';    
-    
+    formData.raceWebsite = $('#race-website').val() || '[race website goes here]';
+
     // Get goals information from form.
     formData.goalA = {
       description: $('#goal-a').val(),
       isCompleted: $('#goal-a-completed').is(':checked')
     };
-    
+
     formData.goalB = {
       description: $('#goal-b').val(),
       isCompleted: $('#goal-b-completed').is(':checked')
     };
-    
+
     formData.goalC = {
       description: $('#goal-c').val(),
       isCompleted: $('#goal-c-completed').is(':checked')
     };
-    
+
     // Get splits information from form.
     formData.splitDistance = $('input[name=split-distance]:checked').val();
     formData.splits = [];
-    
+
     // Get number of splits entered.
     var splits = $('.splits').children();
-    
+
     // Get value of each split.
     for (var i = 1; i < splits.length + 1; i++) {
       formData.splits.push($('#split-' + i).val());
     }
-    
+
     // Get pictures information from form.
     formData.pictures = [];
-    
+
     // Get number of pictures entered.
     var pictures = $('.pictures').children();
-    
+
     // Get value of each picture group.
     for (var i = 1; i < pictures.length + 1; i++) {
       formData.pictures.push({
@@ -220,64 +223,65 @@ $(function () {
         description: $('#picture-' + i + '-description').val()
       });
     }
-    
+
     // Get text-heavy section information from form.
     formData.textHeavySections = [];
-    
+
     // Get number of text-heavy sections entered.
     var textHeavySections = $('.text-heavy-sections').children();
-    
+
     // Get value of each text-heavy section.
     for (var i = 1; i < textHeavySections.length + 1; i++) {
       formData.textHeavySections.push($('#text-select-' + i + ' option:selected').text());
     }
-    
+
     // Add race information to query string.
     uri += '?raceName=' + encodeURIComponent(formData.raceName);
     uri += '&raceDistance=' + encodeURIComponent(formData.raceDistance);
     uri += '&raceDate=' + encodeURIComponent(formData.raceDate);
     uri += '&raceWebsite=' + encodeURIComponent(formData.raceWebsite);
-    
+
     // Add goal information to query string.
     if (formData.goalA.description !== '') {
       uri += '&goalADescription=' + encodeURIComponent(formData.goalA.description);
-      uri += '&goalAIsCompleted=' + encodeURIComponent(formData.goalA.isCompleted); 
+      uri += '&goalAIsCompleted=' + encodeURIComponent(formData.goalA.isCompleted);
     }
-    
+
     if (formData.goalB.description !== '') {
       uri += '&goalBDescription=' + encodeURIComponent(formData.goalB.description);
-      uri += '&goalBIsCompleted=' + encodeURIComponent(formData.goalB.isCompleted); 
+      uri += '&goalBIsCompleted=' + encodeURIComponent(formData.goalB.isCompleted);
     }
-    
+
     if (formData.goalC.description !== '') {
       uri += '&goalCDescription=' + encodeURIComponent(formData.goalC.description);
-      uri += '&goalCIsCompleted=' + encodeURIComponent(formData.goalC.isCompleted); 
+      uri += '&goalCIsCompleted=' + encodeURIComponent(formData.goalC.isCompleted);
     }
-    
+
     // Add splits information to query string.
     if (formData.splits.length > 0) {
       uri += '&splitDistance=' + encodeURIComponent(formData.splitDistance);
-      
+
       for (var i = 0; i < formData.splits.length; i++) {
         uri += '&split' + (i + 1) + '=' + encodeURIComponent(formData.splits[i]);
       }
     }
-    
+
     // Add pictures information to query string.
     if (formData.pictures.length > 0) {
       for (var i = 0; i < formData.pictures.length; i++) {
         uri += '&picture' + (i + 1) + 'Link=' + encodeURIComponent(formData.pictures[i].link);
-        uri += '&picture' + (i + 1) + 'Description=' + encodeURIComponent(formData.pictures[i].description);        
+        uri += '&picture' + (i + 1) + 'Description=' + encodeURIComponent(formData.pictures[i].description);
       }
     }
-    
+
     // Add text-heavy section information to query string.
     if (formData.textHeavySections.length > 0) {
       for (var i = 0; i < formData.textHeavySections.length; i++) {
-        uri += '&textHeavySection' + (i + 1) + '=' + encodeURIComponent(formData.textHeavySections[i]);  
+        uri += '&textHeavySection' + (i + 1) + '=' + encodeURIComponent(formData.textHeavySections[i]);
       }
     }
-    
+
+    // Open URI in new tab.
     window.open(uri, '_blank');
   }
 });
