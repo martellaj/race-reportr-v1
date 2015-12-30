@@ -6,9 +6,6 @@
 * **Rendered preview of output.**
   * After filling out all desired sections, render the generated Markdown so the user can see it.
 
-## Miscellaneous sections
-* All sections have an "Include?" checkbox 
-
 ### "About the race" section
 * A form to record basic race facts
   * ~~Name of race~~
@@ -33,18 +30,18 @@
   * Age group finish
   
 ## Report sections
-* A form to record more text-heavy sections of the report
-  * A row with a dropdown of preselected section titles, a textbox, and a button to add a new row
-* Sections
-  * Training
-  * Race strategy
-  * Pre-race
-  * Race
-  * Mile X (and KM X)
-  * Miles X to Y (and KM X to Y)
-  * Post-race
-  * What's next?
-  * Custom
+* ~A form to record more text-heavy sections of the report~
+  * ~A row with a dropdown of preselected section titles, a textbox, and a button to add a new row~
+* ~Sections~
+  * ~Training~
+  * ~Race strategy~
+  * ~Pre-race~
+  * ~Race~
+  * ~Mile X (and KM X)~
+  * ~Miles X to Y (and KM X to Y)~
+  * ~Post-race~
+  * ~What's next?~
+  * ~Custom~
   
 ## Libaries
 * [markdown-js](https://github.com/evilstreak/markdown-js) - For converting Markdown to HTML
