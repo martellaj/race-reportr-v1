@@ -56,6 +56,19 @@ router.get('/', function (req, res, next) {
       textHeavySection++;
     } while (req.query.hasOwnProperty('textHeavySection' + textHeavySection));
   }
+  
+  // Add pictures section.
+  if (req.query.picture1Link) {
+    source += '### Pictures\n';
+    var picture = 1;
+
+    do {
+      source += '* [' + req.query['picture' + picture + 'Description'] + '](' + req.query['picture' + picture + 'Link'] + ')\n'; 
+      picture++; 
+    } while (req.query.hasOwnProperty('picture' + picture + 'Link'));
+
+    source += '\n';
+  }
 
   // Add link back to the site.
   source += '\n*This report was generated using [race reportr](http://racereportr.azurewebsites.net), a tool built by [/u/BBQLays](https://www.reddit.com/u/bbqlays) for making great looking and informative race reports.*';
