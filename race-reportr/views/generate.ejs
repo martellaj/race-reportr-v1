@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="Joe Martella">
 
-  <title>race reportr | preview</title>
+  <title>race reportr</title>
 
   <!-- Bootstrap core CSS 
   ==================================== -->
@@ -23,6 +23,7 @@
   <!-- App styles 
   ==================================== -->
   <link href="/stylesheets/style.css" rel="stylesheet">
+  <link href="/stylesheets/generate.css" rel="stylesheet">  
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -36,7 +37,7 @@
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">race reportr</a>
+        <a class="navbar-brand" href="/">race reportr</a>
       </div>
     </div>
   </nav>
@@ -44,21 +45,26 @@
   <div class="container">
     <div class="starter-template">
       <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-9">
           <h2 class="lead">
-            This is what your report will look like on <em>/r/running</em>. If you'd like to change something, go back to the other tab and make those changes. If it looks good, click <strong>get source</strong> to get the post source to post. <br>
-            <small>Note: The gibberish text underneath the text-heavy sections are just to give you an idea what it'll look like after you write your report. That text won't be present in the post source.</small>
+            The panel on the left is what your report will look like on <em>/r/running</em>. If you like it, copy the text in the panel on the right and submit it! <br />
+            <small>Note: I'd love if you'd leave the last line that links back to this site, but will totally understand if you choose to remove it.</small>
           </h2>
-          
-          <button class="btn btn-success">get source</button>
         </div>
       </div>
       
       <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-8">
           <div class="panel panel-default preview-panel">
             <div class="panel-body">
-              <%- previewHtml %> 
+              <%- rendered %> 
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="panel panel-default preview-panel">
+            <div class="panel-body">
+              <%- source %> 
             </div>
           </div>
         </div>

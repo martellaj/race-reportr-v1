@@ -1,0 +1,29 @@
+.preview-panel td, th {
+    border: 1px solid #e5e3da;
+    text-align: left;
+    display: table-cell;
+    vertical-align: inherit;
+    padding: 4px 9px;
+    font-size: 1em;
+    line-height: 1.4285714285714286em;
+}
+
+.preview-panel table {
+    border-collapse: collapse;
+}
+
+.preview-panel h3 {
+  color: #5b92fa;
+  display: inline;
+  margin-top: 5px;
+  border: none;
+  font-weight: normal;
+  font-size: 18px;
+  font-family: arial,sans-serif;
+  line-height: 1.3888888888888888em;
+  margin-bottom: 0.625em;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}

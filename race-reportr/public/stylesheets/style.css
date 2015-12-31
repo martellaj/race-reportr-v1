@@ -30,18 +30,6 @@ select {
   margin-bottom: 5px;
 }
 
-.elevator svg {
-  height: 40px;
-  width: 40px;
-  display: block;
-  margin: auto;
-}
-
-.elevator {
-  margin-top: 20px;
-  text-align: center;
-}
-
 .preview-panel {
   margin-top: 20px;
 }

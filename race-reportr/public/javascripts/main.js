@@ -1,18 +1,6 @@
-/* global $, Elevator */
+/* global $ */
 
 $(function () {
-  /**
-   * @desc Creating an elevator and adding its elevate function to the button.
-   */
-  var elevator = new Elevator({
-    mainAudio: '/music/elevator.mp3',
-    endAudio: '/music/ding.mp3'
-  });
-
-  $('#elevator-button').on('click', function () {
-    elevator.elevate();
-  });
-
   /**
    * @desc Event handler for clicking the add button in the splits section.
    *       This function adds a new input row to the splits section.
@@ -159,11 +147,11 @@ $(function () {
   });
 
   /**
-   * @desc Event handler for preview button. Sends form data to the /preview endpoint
+   * @desc Event handler for generate button. Sends form data to the /generate endpoint
    *       on the backend.
    */
-  $('#preview-button').on('click', function () {
-    sendFormData('/preview');
+  $('#generate-button').on('click', function () {
+    sendFormData('/generate');
   });
 
   /**
