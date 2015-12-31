@@ -2,6 +2,7 @@
   "name": "race-reportr",
   "version": "0.0.0",
   "private": true,
+  "engine": "node 0.12.0",
   "scripts": {
     "start": "node ./bin/www"
   },
